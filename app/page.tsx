@@ -29,7 +29,6 @@ const Home: React.FC = () => {
         const response = await fetch(
           'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
         );
-        
         if (!response.ok) {
           throw new Error('Failed to fetch');
         }
@@ -61,14 +60,20 @@ const Home: React.FC = () => {
     }).format(marketCap);
   };
 
-  return (
-    <main>
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+const toggleTheme = () => {
+setIsDarkMode(!isDarkMode);
+document.body.classList.toggle('dark-mode');
+};
+
+return (
+    <div className={`min-h-screen ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="title">
         <h1>Cryptocurrency Tracker</h1>
       </div>
 
-      {//The search input}
-}
+    {/* Search input */}
       <input 
         type="text"
         value={search}
@@ -118,8 +123,22 @@ const Home: React.FC = () => {
           </tbody>
         </table>
       )}
-    </main>
-  );
-};
-
+    <div className="theme-toggle">
+    <button onClick={toggleTheme} className="theme-button">
+        {isDarkMode ? (
+        <svg className="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" 
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+        ) : (
+        <svg className="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" 
+                stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+        )}
+    </button>
+    </div>
+</div>
+);
+}
 export default Home;
