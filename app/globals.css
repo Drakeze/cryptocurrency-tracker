@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.title{
+    text-align: center;
+    padding: 20px;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.title h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Table */
+.crypto-table th {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
 }
