@@ -72,8 +72,8 @@ return (
     <div className={`min-h-screen ${isDarkMode ? 'dark-mode' : ''}`}>
     <div className="flex flex-col lg:flex-row">
         <div className="flex-1">
-            <div className="title">
-            <h1>Crypto Currency Tracker</h1>
+        <div className="title">
+        <h1>Crypto Currency Tracker</h1>
             </div>
             <div className="theme-toggle-container">
                 <div className="theme-toggle flex gap-2">
