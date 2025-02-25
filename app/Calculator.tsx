@@ -27,8 +27,9 @@ const handleOperation = (op: string) => {
     setShouldResetDisplay(true)
     setEquation(`${display} ${op}`)
 }
-
+{/* this is where the expression is evaluated */}
 const calculate = () => {
+    {/* if there is no previous number or operation, return */}
     if (!prevNumber || !operation) return
 
     const prev = parseFloat(prevNumber)
@@ -77,7 +78,7 @@ const handleDecimal = () => {
     setDisplay(display + '.')
     }
 }
-
+{/* this is the calculator styles section using tailwind  */}
 return (
     <div className="w-full max-w-md p-4 rounded-lg shadow-lg bg-white dark:bg-gray-800">
     <div className="mb-4 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
