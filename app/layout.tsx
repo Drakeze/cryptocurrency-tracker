@@ -4,7 +4,8 @@
 // import { useCallback } from 'react'     // When using callbacks
 // import Image from 'next/image'          // When using Next.js images
 // import Link from 'next/link'           // When using Next.js links
-import page from './page';
+
+// import page from './page';
 
 interface RootLayoutProps {
   children: React.ReactNode;
